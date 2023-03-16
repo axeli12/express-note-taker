@@ -6,6 +6,9 @@ const htmlRoutes = require('./routes/htmlRoutes');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const htmlRoutes = require('./routes/html')
+const notes = require('./routes/notes')
+
 // Set up body parsing, static, and route middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
