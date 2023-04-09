@@ -42,13 +42,13 @@ notes.delete('/:id', (req, res) => {
     const noteId = req.params.id;
     fs.readFile('./db/db.json', (err, data) => {
         if (err) {
-            console.lod(err)
+            console.log(err)
         }
 
         const json = JSON.parse(data);
         const result = json.filter((note) => note.id !== noteId);
         
-            fs.writeFileSync('/db/db.json', JSON.stringify(result, null, 4))
+            fs.writeFileSync('./db/db.json', JSON.stringify(result, null, 4))
             res.json(`Note ${noteId} has been deleted`)
            
     });
